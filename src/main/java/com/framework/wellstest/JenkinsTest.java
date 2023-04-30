@@ -99,6 +99,7 @@ public class JenkinsTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		Assert.assertNotNull(driver.getTitle());
 	}
 	
