@@ -85,6 +85,23 @@ public class JenkinsTest {
 		assertEquals(driver.getTitle(), "Position | jQuery UI");
 	}
 	
+	@Test
+	public static void testSce4() {
+		driver.get("https://jqueryUI.com");
+		
+		Actions action = new Actions(driver);
+		action.scrollToElement(driver.findElement(By.xpath("//div[@id='sidebar']//a[text()='Menu']"))).build().perform();
+		action.click(driver.findElement(By.xpath("//div[@id='sidebar']//a[text()='Menu']"))).build().perform();
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Assert.assertNotNull(driver.getTitle());
+	}
+	
 	@AfterTest
 	public static void closeDown() {
 		driver.close();
